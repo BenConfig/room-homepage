@@ -66,7 +66,7 @@ These four changes are reversed when the hamburger menu is closed.
 
 The navbar proved to be a difficult component of the page, but I think this is because I discovered issues I had not noticed before, to do with focus and keyboard navigation.
 
-When the menu is closed I didn't want the user to be able to tab to the links that aren't currently visible. I added this JavaScript code which basically says "when the navbar is closed, if the first link receives focus, change the focus to the first slider button; or if the last link receives focus, change the focus to the hamburger button". This will only happen when the navbar is closed since it checks to see if the element doesn't have a `transform` value:
+When the menu is closed I didn't want the user to be able to tab to the links that aren't currently visible. I added this JavaScript code which basically says "when the navbar is closed, if the first link receives focus, change the focus to the first slide button; or if the last link receives focus, change the focus to the hamburger button". This will only happen when the navbar is closed since it checks to see if the element doesn't have a `transform` value:
 ```js
 /* Skip 'focus' on nav-links while they are hidden from view */
 NAV_LINKS[0].addEventListener('focus', () => {
@@ -77,7 +77,7 @@ NAV_LINKS[NAV_LINKS.length - 1].addEventListener('focus', () => {
 })
 ```
 
-While the hamburger menu was expanded, it was possible for the user to tab to the slider buttons and interact with the carousel. To prevent this I added code which closes the hamburger menu if the first slider button receives focus. I also decided to make the hamburger menu close if the user clicks outside of the menu (i.e. the `<main>` element), again so that they cannot interact with the carousel while the hamburger menu is open. The hamburger menu also closes if the users resizes the window.
+While the hamburger menu was expanded, it was possible for the user to tab to the slide buttons and interact with the carousel. To prevent this I added code which closes the hamburger menu if the first slide button receives focus. I also decided to make the hamburger menu close if the user clicks outside of the menu (i.e. the `<main>` element), again so that they cannot interact with the carousel while the hamburger menu is open. The hamburger menu also closes if the users resizes the window.
 
 ### The Carousel
 This was only my second time creating a carousel and it turned out much better than the first. The text is also transformed as well as the image. Here is the CSS for the slide element.
