@@ -1,7 +1,6 @@
 /* ------------------------------------------------------ */
 /*                    Get DOM Elements                    */
 /* ------------------------------------------------------ */
-
 /* Navigation Elements */
 const MAIN = document.querySelector('.main')
 const NAV = document.querySelector('.nav')
@@ -33,7 +32,7 @@ NAVBAR_TOGGLE.addEventListener('click', function() {
     }
 })
 
-/* If user clicks outside of the navigation menu, close navigation menu */
+/* If user clicks outside of navigation menu, close navigation menu */
 MAIN.addEventListener('click', () => {
     if (NAV.classList.contains('expanded')) {
         NAV.classList.remove('expanded');
@@ -43,8 +42,7 @@ MAIN.addEventListener('click', () => {
     }
 })
 
-
-/* Skip 'focus' on nav-links while they are hidden from view */
+/* Skip 'focus' on nav-links when hidden */
 NAV_LINKS[0].addEventListener('focus', () => {
     if (window.getComputedStyle(NAVBAR).transform !== 'none') SLIDE_BTNS[0].focus();
 })
