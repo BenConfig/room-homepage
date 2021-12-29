@@ -58,7 +58,7 @@ img {
 body {
     font: var(--fw-normal) .75rem/1.65 'Spartan', sans-serif;
     color: var(--clr-black);
-    background: hsla(0, 0%, 95%);
+    background: hsla(0, 0%, 98%);
 }
 
 section { background: var(--clr-white) }
