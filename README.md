@@ -38,7 +38,7 @@ Users should be able to:
 There were many obstacles to overcome in this challenge and some of them were quite unexpected.
 
 ### The HTML
-For example, I felt that my slides should be `<li>`s inside a `<ul>` element as this seemed to be the most semantically correct approach. The problem I encountered was that I could not place the slider buttons inside of the `<ul>` because they aren't part of the list. They had to sit outside the `<ul>` and this made it very difficult to position them correctly. I was forced into using absolute positioning and adjusting the property values at each media query to ensure they stay positioned nicely.
+For example, I felt that my slides should be `<li>`s inside a `<ul>` element as this seemed to be the most semantically correct approach. The problem I encountered was that I could not place the slide buttons inside of the `<ul>` because they aren't part of the list. They had to sit outside the `<ul>` and this made it very difficult to position them correctly. I was forced into using absolute positioning and adjusting the property values at each media query to ensure they stay positioned nicely.
 
 ### The Navbar
 The mobile layout has a hamburger menu which expands when you click the `<button>`. Four things happen when the hamburger menu is expanded:
