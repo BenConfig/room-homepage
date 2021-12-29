@@ -317,7 +317,7 @@ h1 {
 }
 
 /* -------------- Slide Text LARGE VIEWPORT ------------- */
-@media only screen and (min-width: 53.75em) {
+@media only screen and (min-width: 54.75em) {
     .slide-text { margin-left: auto; }
 }
 
@@ -350,7 +350,7 @@ h1 {
 }
 
 /* ------------- Slide Image LARGE VIEWPORT ------------- */
-@media only screen and (min-width: 53.75em) {
+@media only screen and (min-width: 54.75em) {
     .slide-img-sm { display: none; }
     
     .slide-img-lg {
@@ -414,7 +414,7 @@ h1 {
 }
 
 /* ------------ Slide Buttons LARGE VIEWPORT ----------- */
-@media only screen and (min-width: 53.75em) {
+@media only screen and (min-width: 54.75em) {
     .btn-group {
         right: initial;
         left: calc(100% - 53.75rem);
@@ -473,7 +473,7 @@ h1 {
 }
 
 /* ------------ Row 2 (About) LARGE VIEWPORT ------------ */
-@media only screen and (min-width: 53.75em) {
+@media only screen and (min-width: 54.75em) {
     .about-text { margin-left: auto; }
 
     .about-img-container { flex-basis: initial; }
