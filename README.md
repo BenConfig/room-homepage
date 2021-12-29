@@ -77,7 +77,7 @@ NAV_LINKS[NAV_LINKS.length - 1].addEventListener('focus', () => {
 })
 ```
 
-While the hamburger menu was expanded, it was possible for the user to tab to the slide buttons and interact with the carousel. To prevent this I added code which closes the hamburger menu if the first slide button receives focus. I also decided to make the hamburger menu close if the user clicks outside of the menu (i.e. the `<main>` element), again so that they cannot interact with the carousel while the hamburger menu is open. The hamburger menu also closes if the users resizes the window.
+While the hamburger menu was expanded, it was possible for the user to tab to the slide buttons and interact with the carousel. To prevent this I added code which closes the hamburger menu if the first slide button receives focus. I also decided to make the hamburger menu close if the user clicks outside of the menu (i.e. the `<main>` element), again so that they cannot interact with the carousel while the hamburger menu is open. The hamburger menu also closes if the user resizes the window.
 
 ### The Carousel
 This was only my second time creating a carousel and it turned out much better than the first. The text is also transformed as well as the image. Here is the CSS for the slide element.
@@ -100,7 +100,7 @@ This was only my second time creating a carousel and it turned out much better t
 
 You will see that the element is positioned in a grid of 1 row by 1 column. I have never seen CSS Grid used like this before but I thought it was a clever way of getting the slides to stack on top of each other without having to use absolute positioning. The `opacity` is `0` but animates to `1` when the slide becomes 'active'. `visibility` might seem redundant here. The reason I included it is so that when the slide does become visible, the screen reader will read out the content, triggered by the `aria-live="polite"` attribute on the `<ul>` element. `visibility` cannot be animated properly, though by adding it to `transition` it removed the white flashing that was occurring every time the slide changed.
 
-A problem I had regarding keyboard navigation, was the user could tab to the 'shop now' link for slides that weren't 'active'. Using JavaScript I had to add `tab-index="-1"` to each link and then remove it for the one which became active.
+A problem I had regarding keyboard navigation, was the user could tab to the 'shop now' link for slides that weren't 'active'. Using JavaScript I had to add `tabindex="-1"` to each link and then remove it for the one which became active.
 
 ## Continued development
 
