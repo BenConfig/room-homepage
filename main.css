@@ -373,7 +373,7 @@ h1 {
     position: absolute;
     z-index: 2;
     top: 360px;
-    right: 1.25rem;
+    right: 0;
     transform: translateY(-100%);
     display: flex;
 }
