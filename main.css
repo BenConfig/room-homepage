@@ -58,8 +58,10 @@ img {
 body {
     font: var(--fw-normal) .75rem/1.65 'Spartan', sans-serif;
     color: var(--clr-black);
-    background: var(--clr-white);
+    background: hsla(0, 0%, 95%);
 }
+
+section { background: var(--clr-white) }
 
 button, a {
     display: inline-flex;
@@ -153,8 +155,8 @@ h1 {
     position: absolute;
     bottom: .25rem;
     width: 1rem;
-    margin: auto;
     height: 2px;
+    margin: auto;
     background: currentColor;
     transform: scaleX(0);
     transform-origin: right;
