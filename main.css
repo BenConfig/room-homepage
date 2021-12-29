@@ -1,0 +1,501 @@
+/* ------------------------------------------------------ */
+/*                          Fonts                         */
+/* ------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+
+/* ------------------------------------------------------ */
+/*                    Custom Properties                   */
+/* ------------------------------------------------------ */
+:root {
+    /* ----------------------- Colors ----------------------- */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-gray: hsl(0, 0%, 63%);
+    --clr-dark-gray: hsl(0, 0%, 27%);
+    --clr-black: hsl(0, 0%, 0%);
+
+    /* -------------------- Font Weights -------------------- */
+    --fw-normal: 500;
+    --fw-bold: 600;
+    --fw-bolder: 700;
+
+    /* -------------------- Focus Outline ------------------- */
+    --focus-outline: 2px dotted;
+
+    /* ----------------- Animation Durations ---------------- */
+    --anim-duration: 250ms;
+}
+
+/* ------------------------------------------------------ */
+/*                 Resets & Global Styles                 */
+/* ------------------------------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body,
+h1, h2,
+p, ul,
+button,
+figure { margin: 0; }
+
+ul,
+figure { padding: 0; }
+
+ul { list-style: none; }
+
+button { border: none; }
+
+a { text-decoration: none; }
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.resize-animation-stopper * { transition: none !important; }
+
+body {
+    font: var(--fw-normal) .75rem/1.65 'Spartan', sans-serif;
+    color: var(--clr-black);
+    background: var(--clr-white);
+}
+
+button, a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+p { color: var(--clr-gray); }
+
+/* ------------------------------------------------------ */
+/*                         Header                         */
+/* ------------------------------------------------------ */
+header {
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    z-index: 3;
+}
+
+.nav {
+    display: flex;
+    padding: 2.0625rem .75rem;
+}
+
+h1 {
+    order: 1;
+    margin: auto;
+    transform: translateX(-22px); /* Half the btn width */
+}
+
+.logo { padding: .75rem; }
+
+/* Logo FOCUS STATE */
+.logo:focus { outline: var(--focus-outline) var(--clr-white); }
+.logo:focus:not(:focus-visible) { outline: none; }
+.logo:focus-visible { outline: var(--focus-outline) var(--clr-white); }
+
+.navbar-toggle {
+    display: grid;
+    place-items: center;
+    z-index: 4;
+    color: var(--clr-white);
+    background: transparent;
+    transition: color var(--anim-duration);
+}
+
+/* Navbar Toggle FOCUS STATE */
+.navbar-toggle:focus { outline: 2px solid currentColor; }
+.navbar-toggle:focus:not(:focus-visible) { outline: none; }
+.navbar-toggle:focus-visible { outline: 2px solid currentColor; }
+
+.open-navbar-icon,
+.close-navbar-icon {
+    grid-area: 1 / 1 / 2 / 2; /* To get the icons to overlap */
+    transition: opacity calc(var(--anim-duration) / 2);
+} 
+
+.open-navbar-icon { width: 1.25rem; }
+
+.close-navbar-icon {
+    width: 1rem;
+    opacity: 0;
+}
+
+.navbar {
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 2.1875rem .75rem 2rem 3.5rem;
+    background: var(--clr-white);
+    transform: translateY(-100%);
+    transition: transform var(--anim-duration);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: var(--fw-bold);
+    padding: .75rem;
+    margin-left: .375rem;
+    color: inherit;
+}
+
+/* Nav Links HOVER STATE */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: .25rem;
+    width: 1rem;
+    margin: auto;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--anim-duration);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Nav Links FOCUS STATE */
+.nav-link:focus {
+    outline: var(--focus-outline) currentColor;
+    outline-offset: -5px;
+}
+
+.nav-link:focus:not(:focus-visible) { outline: none; }
+
+.nav-link:focus-visible {
+    outline: var(--focus-outline) currentColor;
+    outline-offset: -5px;
+}
+
+/* ---------------- Expanded Menu Styles ---------------- */
+.expanded > .navbar-toggle { color: var(--clr-gray) }
+
+.expanded .close-navbar-icon { opacity: 0; }
+
+.expanded .close-navbar-icon { opacity: 1; }
+
+.expanded > .navbar { transform: initial; }
+
+.main {
+    position: relative;
+    transition: filter var(--anim-duration);
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    height: 100vh;
+    z-index: 3;
+    background: var(--clr-black);
+    opacity: 0;
+    transition: opacity var(--anim-duration);
+    pointer-events: none;
+}
+
+.main.blur { filter: blur(5px); }
+
+.main.blur::before {
+    opacity: .4;
+    pointer-events: initial;
+}
+
+/* --------------- Header MEDIUM VIEWPORT --------------- */
+@media only screen and (min-width: 30em) {
+    .nav { padding: 3.0625rem 0 0 3.25rem; }
+
+    h1 {
+        order: -1;
+        margin: 0;
+        margin-right: 1.5rem;
+        transform: initial;
+    }
+
+    .navbar-toggle { display: none; }
+
+    .navbar {
+        position: initial;
+        padding: 0;
+        background: transparent;
+        transform: initial;
+    }
+
+    .nav-link { color: var(--clr-white); }
+}
+
+/* ------------------------------------------------------ */
+/*                     Row 1 (Slides)                     */
+/* ------------------------------------------------------ */
+.row1 { position: relative; }
+
+.slides { display: grid; }
+
+.slide {
+    grid-area: 1 / 1 / 2 / 2; /* To make slides overlap */
+    display: grid;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--anim-duration),
+                visibility var(--anim-duration);
+}
+
+.slide.active {
+    visibility: initial;
+    opacity: 1;
+}
+
+/* ------------- Slide EXTRA LARGE VIEWPORT ------------- */
+@media only screen and (min-width: 80em) {
+    .slide { grid-template-columns: minmax(0, 840px) minmax(37.5rem, 1fr); }
+}
+
+/* --------------------- Slide Text --------------------- */
+.slide-text {
+    max-width: 43.75rem;
+    padding: 4.5rem 2rem 3.5625rem;
+    background: var(--clr-white);
+}
+
+.slide-h2 {
+    font-size: 1.75rem;
+    font-weight: var(--fw-bold);
+    line-height: 1.1;
+    letter-spacing: -.0425em;
+    margin-bottom: 1.0625rem;
+}
+
+.slide-p { margin-bottom: 2.375rem; }
+
+.shop-link {
+    letter-spacing: .825em;
+    text-transform: uppercase;
+    padding: .75rem;
+    margin-left: -.75rem;
+    color: var(--clr-dark-gray);
+    transition: color var(--anim-duration);
+}
+
+.shop-link-icon {
+    margin-left: 2.125rem;
+    fill: var(--clr-dark-gray);
+    transition: fill var(--anim-duration);
+}
+
+/* Shop Link HOVER STATE */
+.shop-link:hover { color: var(--clr-gray); }
+.shop-link:hover > .shop-link-icon { fill: var(--clr-gray); }
+
+/* Shop Link FOCUS STATE */
+.shop-link:focus { outline: var(--focus-outline) currentColor; }
+
+.shop-link:focus:not(:focus-visible) { outline: none; }
+
+.shop-link:focus-visible { outline: var(--focus-outline) currentColor; }
+
+/* ------------- Slide Text MEDIUM VIEWPORT ------------- */
+@media only screen and (min-width: 30em) {
+    .slide-text { padding: 6rem clamp(4.25rem, 14vw, 6.25rem) 4.5rem; }
+
+    .slide-h2 {
+        font-size: clamp(2rem, 7vw, 2.5rem);
+        margin-bottom: 1.625rem;
+    }
+}
+
+/* -------------- Slide Text LARGE VIEWPORT ------------- */
+@media only screen and (min-width: 53.75em) {
+    .slide-text { margin-left: auto; }
+}
+
+/* ----------- Slide Text EXTRA LARGE VIEWPORT ---------- */
+@media only screen and (min-width: 80em) {
+    .slide-text {
+        grid-column: 2 / 3;
+        justify-self: center;
+        padding: 7.5rem 6.25rem 4.5rem;
+        margin-left: 0;
+    }
+
+    .slide-p { margin-bottom: 1.125rem; }
+}
+
+/* --------------------- Slide Image -------------------- */
+.slide-img-container { order: -1; }
+
+.slide-img-sm { height: 360px; }
+
+.slide-img-lg {
+    display: none;
+    height: 534px;
+}
+
+/* ------------- Slide Image MEDIUM VIEWPORT ------------ */
+@media only screen and (min-width: 30em) {
+    .slide-img-sm { display: none; }
+    .slide-img-lg { display: block; }
+}
+
+/* ------------- Slide Image LARGE VIEWPORT ------------- */
+@media only screen and (min-width: 53.75em) {
+    .slide-img-sm { display: none; }
+    
+    .slide-img-lg {
+        max-width: 100%;
+        width: auto;
+        margin-bottom: -22.6825rem;
+    }
+}
+
+/* ---------- Slide Image EXTRA LARGE VIEWPORT ---------- */
+@media only screen and (min-width: 80em) {
+    .slide-img-lg {
+        grid-column: 1 / 2;
+        margin-bottom: 0;
+    }
+}
+
+/* -------------------- Slide Buttons ------------------- */
+.btn-group {
+    position: absolute;
+    z-index: 2;
+    top: 360px;
+    right: 1.25rem;
+    transform: translateY(-100%);
+    display: flex;
+}
+
+.slide-btn {
+    padding: 1rem 1.3125rem;
+    background: var(--clr-black);
+    transition: background var(--anim-duration);
+}
+
+.slide-btn-icon {
+    transform: scale(.7);
+    pointer-events: none;
+}
+
+.slide-btn:hover { background: var(--clr-dark-gray); }
+
+/* Slide Button FOCUS STATE */
+.slide-btn:focus {
+    outline: var(--focus-outline) var(--clr-white);
+    outline-offset: -5px;
+}
+
+.slide-btn:focus:not(:focus-visible) { outline: none; }
+
+.slide-btn:focus-visible {
+    outline: var(--focus-outline) var(--clr-white);
+    outline-offset: -5px;
+}
+
+/* ------------ Slide Buttons MEDIUM VIEWPORT ----------- */
+@media only screen and (min-width: 30em) {
+    .btn-group { top: 534px; }
+
+    .slide-btn { padding: 1.75rem 2.0625rem; }
+
+    .slide-btn-icon { transform: scale(1); }
+}
+
+/* ------------ Slide Buttons LARGE VIEWPORT ----------- */
+@media only screen and (min-width: 53.75em) {
+    .btn-group {
+        right: initial;
+        left: calc(100% - 53.75rem);
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Slide Buttons EXTRA LARGE VIEWPORT ---------- */
+@media only screen and (min-width: 80em) {
+    .btn-group {
+        top: initial;
+        bottom: 0;
+        left: min(calc(100% - 37.5rem), 52.5rem);
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                      Row 2 (About)                     */
+/* ------------------------------------------------------ */
+.row2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text {
+    padding: 3.5625rem 2rem 3.5rem;
+    background: var(--clr-white);
+}
+
+.about-h2 {
+    font-size: .75rem;
+    font-weight: var(--fw-bolder);
+    letter-spacing: .415em;
+    text-transform: uppercase;
+    margin-bottom: .6875rem;
+}
+
+.about-img-container1 { order: -1; }
+
+.about-img { max-height: 266px; }
+
+/* ------------ Row 2 (About) MEDIUM VIEWPORT ----------- */
+@media only screen and (min-width: 30em) {
+    .row2 { flex-flow: row wrap; }
+
+    .about-text {
+        max-width: 43.75rem;
+        padding: 4.3125rem clamp(4.25rem, 14vw, 6.25rem) 4.1875rem;
+    }
+
+    .about-img-container { flex-basis: 50%; }
+
+    .about-img-container2 { order: -2; }
+
+    .about-img { height: 266px; }
+}
+
+/* ------------ Row 2 (About) LARGE VIEWPORT ------------ */
+@media only screen and (min-width: 53.75em) {
+    .about-text { margin-left: auto; }
+
+    .about-img-container { flex-basis: initial; }
+
+    .about-img-container2 { margin-left: auto; }
+
+    .about-img { width: auto; }
+}
+
+/* --------- Row 2 (About) EXTRA LARGE VIEWPORT --------- */
+@media only screen and (min-width: 80em) {
+    .row2 {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        place-items: center;
+    }
+
+    .about-text {
+        padding: 0 3rem 0;
+        margin-left: 0;
+    }
+
+    .about-img-container2 {
+        order: 1;
+        margin: 0;
+    }
+}

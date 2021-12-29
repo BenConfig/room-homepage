@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Mentor | Room Homepage</title>
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header>
+
+      <!-- Navigation Menu -->
+      <nav class="nav">
+
+        <!-- Logo -->
+        <h1>
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="room">
+          </a>
+        </h1>
+
+        <!-- Hamburger Button -->
+        <button
+          class="navbar-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-controls="navbar"
+          aria-expanded="false">
+          <img class="open-navbar-icon" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
+          <img class="close-navbar-icon" src="images/icon-close.svg" alt="" aria-hidden="true">
+        </button>
+
+        <!-- Navbar -->
+        <ul class="navbar" id="navbar">
+          <li><a href="#" class="nav-link">home</a></li>
+          <li><a href="#" class="nav-link">shop</a></li>
+          <li><a href="#" class="nav-link">about</a></li>
+          <li><a href="#" class="nav-link">contact</a></li>
+        </ul>
+
+      </nav>
+
+    </header>
+
+    <main class="main">
+      
+      <!-- Row 1 (Slides) -->
+      <section class="row1">
+
+        <!-- Slide Buttons -->
+        <div class="btn-group">
+          <button class="slide-btn" id="prev" type="button" aria-label="See previous slide">
+            <svg class="slide-btn-icon" aria-hidden="true" width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+          <button class="slide-btn" id="next" type="button" aria-label="See next slide">
+            <svg class="slide-btn-icon" aria-hidden="true" width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+        </div>
+
+        <!-- Slides -->
+        <ul class="slides" aria-live="polite">
+
+          <!-- Slide 1 -->
+          <li class="slide active">
+            <div class="slide-text">
+              <h2 class="slide-h2">Discover innovative ways to decorate</h2>
+              <p class="slide-p">We provide unmatched quality, comfort, and style for property owners across the country. 
+                Our experts combine form and function in bringing your vision to life. Create a room in your 
+                own style with our collection and make your property a reflection of you and what you love.</p>
+              <a class="shop-link" href="#">Shop now
+                <svg class="shop-link-icon" aria-hidden="true" width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"/></svg>
+              </a>
+            </div>
+            <figure class="slide-img-container">
+              <img class="slide-img slide-img-sm" src="images/sm-image-hero-1.jpg" alt="A decorative plant with small dark green petals, placed on a square table with a wooden top and four white legs, surrounded by four white chairs of unusual geometric shape with hollowed-out backs">
+              <img class="slide-img slide-img-lg" src="images/lg-image-hero-1.jpg" alt="A decorative plant with small dark green petals, placed on a square table with a wooden top and four white legs, surrounded by four white chairs of unusual geometric shape with hollowed-out backs">
+            </figure>
+          </li>
+
+          <!-- Slide 2 -->
+          <li class="slide">
+            <div class="slide-text">
+              <h2 class="slide-h2">We are available all across the globe</h2>
+              <p class="slide-p">With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+                Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+                store locator. Any questions? Don't hesitate to contact us today.</p>
+              <a class="shop-link" href="#" tabindex="-1">Shop now
+                <svg class="shop-link-icon" aria-hidden="true" width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"/></svg>
+              </a>
+            </div>
+            <figure class="slide-img-container">
+              <img class="slide-img-sm" src="images/sm-image-hero-2.jpg" alt="A gold-colored chair and a silver chair behind a steel-blue chair, all of the same minimalistic design, facing forwards in a triangular formation">
+              <img class="slide-img-lg" src="images/lg-image-hero-2.jpg" alt="A gold-colored chair and a silver chair behind a steel-blue chair, all of the same minimalistic design, facing forwards in a triangular formation">
+            </figure>
+          </li>
+
+          <!-- Slide 3 -->
+          <li class="slide">
+            <div class="slide-text">
+              <h2 class="slide-h2">Manufactured with the best materials</h2>
+              <p class="slide-p">Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+                to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+                experience in this industry, we understand what customers want for their home and office.</p>
+              <a class="shop-link" href="#" tabindex="-1">Shop now
+                <svg class="shop-link-icon" aria-hidden="true" width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"/></svg>
+              </a>
+            </div>
+            <figure class="slide-img-container">
+              <img class="slide-img-sm" src="images/sm-image-hero-3.jpg" alt="A side-on view of a black, collapsible chair with a cushioned seat and back support">
+              <img class="slide-img-lg" src="images/lg-image-hero-3.jpg" alt="A side-on view of a black, collapsible chair with a cushioned seat and back support">
+            </figure>
+          </li>
+
+        </ul>
+
+      </section>
+
+      <!-- Row 2 (About) -->
+      <section class="row2">
+
+        <div class="about-text">
+          <h2 class="about-h2">About our furniture</h2>
+          <p class="about-p">Our multifunctional collection blends design and function to suit your individual taste.
+            Make each room unique, or pick a cohesive theme that best express your interests and what
+            inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+            or anything in between. Product specialists are available to help you create your dream space.</p>
+        </div>
+        
+        <figure class="about-img-container about-img-container1">
+          <img class="about-img" src="images/image-about-dark.jpg" alt="A dimly-lit room featuring two black, deep-seated, cushioned armchairs with short backs, around a circular coffee table with a cylindrical bowl placed in the center">
+        </figure>
+        <figure class="about-img-container about-img-container2">
+          <img class="about-img" src="images/image-about-light.jpg" alt="A white-tinctured, washed-out view of a small, white plastic chair of minimilistic design with an ovular back, highlighted by a stream of sunlight shining from the right side">
+        </figure>
+        
+      </section>
+
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+
+</html>
